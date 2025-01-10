@@ -14,7 +14,9 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %
 # Allowiing both trailing and non-trailing slashes
 app.url_map.strict_slashes = False
 
-
+@app.route("/")
+def helloworld():
+	return 'Hello World!'
 
 
 @app.route("/numericalintegralservice/<float:lower>/<float:upper>", methods=["GET"])
